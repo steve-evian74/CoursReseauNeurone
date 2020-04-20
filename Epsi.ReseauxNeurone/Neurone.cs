@@ -17,11 +17,11 @@ namespace Epsi.ReseauxNeurone
 
             for (int i = 0; i < numberRandom; i++)
             {
-                Weights[i] = rand.Next(2);
+                Weights[i] = rand.Next(1,5);
                 Console.WriteLine(Weights[i]);
                 Activation(Weights);
             }
-            forward(Weights);
+
             
         }
 
@@ -36,7 +36,7 @@ namespace Epsi.ReseauxNeurone
 
             for (int i = 0; i < Weights.Length; i++)
             {
-                result = Weights[i] * weight[i];
+                result = (Weights[i] * weight[i]) + result;
             }
 
             return result;
