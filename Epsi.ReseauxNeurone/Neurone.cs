@@ -26,9 +26,21 @@ namespace Epsi.ReseauxNeurone
 
         }
 
-        public void Forward()
+        float forward(float[] valeur)
         {
-
+            float result = 0;
+            if (poids.length == valeur.length)
+            {
+                for (int i = 0; i < poids.length; i++)
+                {
+                    result += (poids[i] * valeur[i]);
+                }
+            }
+            else
+            {
+                System.out.print("Taille des tableaux incompatibles");
+            }
+            return result;
         }
     }
 }
