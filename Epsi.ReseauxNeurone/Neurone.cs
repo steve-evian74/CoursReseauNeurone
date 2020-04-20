@@ -19,7 +19,7 @@ namespace Epsi.ReseauxNeurone
             {
                 Weights[i] = rand.Next(1,5);
                 Console.WriteLine(Weights[i]);
-                Activation(Weights);
+                
             }
 
             
@@ -38,7 +38,7 @@ namespace Epsi.ReseauxNeurone
             {
                 result = (Weights[i] * weight[i]) + result;
             }
-
+            Activation(Weights);
             return result;
             
         }
