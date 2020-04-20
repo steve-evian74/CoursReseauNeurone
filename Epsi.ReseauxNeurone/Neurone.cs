@@ -8,17 +8,21 @@ namespace Epsi.ReseauxNeurone
 {
     class Neurone
     {
-        private int[] Weights = new int[2];
+        private int[] Weights;
 
-        public Neurone()
+        public Neurone( int numberRandom)
         {
             var rand = new Random();
-            
-            for (int i = 0; i < 2; i++)
+            Weights = new int[numberRandom];
+
+            for (int i = 0; i < numberRandom; i++)
             {
                 Weights[i] = rand.Next(2);
                 Console.WriteLine(Weights[i]);
-            } 
+                Activation();
+            }
+            forward(Weights);
+            
         }
 
         public void Activation()
@@ -26,21 +30,17 @@ namespace Epsi.ReseauxNeurone
 
         }
 
-        float forward(float[] valeur)
+        public float forward(int []weight)
         {
             float result = 0;
-            if (poids.length == valeur.length)
+
+            for (int i = 0; i < Weights.Length; i++)
             {
-                for (int i = 0; i < poids.length; i++)
-                {
-                    result += (poids[i] * valeur[i]);
-                }
+                result = Weights[i] * weight[i];
             }
-            else
-            {
-                System.out.print("Taille des tableaux incompatibles");
-            }
+
             return result;
+            
         }
     }
 }

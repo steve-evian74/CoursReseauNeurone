@@ -10,8 +10,9 @@ namespace Epsi.ReseauxNeurone
     {
         static void Main(string[] args)
         {
-
-            Neurone neurone1 = new Neurone();
+            int[] tab = new int[] { 1, 5, 6, 8 };
+            Neurone neurone1 = new Neurone(4);
+            neurone1.forward(tab);
             Console.ReadLine();
         }
 
