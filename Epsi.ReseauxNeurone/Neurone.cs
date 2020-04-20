@@ -18,16 +18,15 @@ namespace Epsi.ReseauxNeurone
             for (int i = 0; i < numberRandom; i++)
             {
                 Weights[i] = rand.Next(1,5);
-                Console.WriteLine(Weights[i]);
-                
             }
 
-            
         }
 
         public int Activation(int[] Poids)
         {
             return Poids.Count();
+
+
         }
 
         public float forward(int []weight)

@@ -10,9 +10,19 @@ namespace Epsi.ReseauxNeurone
     {
         static void Main(string[] args)
         {
+            Console.Write("Veuillez entrer un nombre : ");
+            int valueDefined = Convert.ToInt32(Console.ReadLine());
+
             int[] tab = new int[] { 1, 5, 6, 8 };
+
+
             Neurone neurone1 = new Neurone(4);
             neurone1.forward(tab);
+
+
+            Trainer trainer1 = new Trainer(tab , valueDefined);
+
+
             Console.ReadLine();
         }
 
