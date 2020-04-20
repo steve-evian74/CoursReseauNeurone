@@ -19,9 +19,7 @@ namespace Epsi.ReseauxNeurone
             Neurone neurone1 = new Neurone(4);
             neurone1.forward(tab);
 
-
             Trainer trainer1 = new Trainer(tab , valueDefined);
-
 
             Console.ReadLine();
         }
