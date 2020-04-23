@@ -13,7 +13,7 @@ namespace Epsi.ReseauxNeurone
             Console.Write("Veuillez entrer un nombre : ");
             int valueDefined = Convert.ToInt32(Console.ReadLine());
 
-            int[] tab = new int[] { 1, 5, 6, 8 };
+            double[] tab = new double[] { 1, 5, 6, 8 };
 
 
             Neurone neurone1 = new Neurone(4);

@@ -8,30 +8,30 @@ namespace Epsi.ReseauxNeurone
 {
     class Neurone
     {
-        private int[] Weights;
+        private double[] Weights;
 
         public Neurone( int numberRandom)
         {
             var rand = new Random();
-            Weights = new int[numberRandom];
+            Weights = new double[numberRandom];
 
             for (int i = 0; i < numberRandom; i++)
             {
-                Weights[i] = rand.Next(1,5);
+                Weights[i] = rand.NextDouble();
             }
 
         }
 
-        public int Activation(int[] Poids)
+        public int Activation(double[] Poids)
         {
             return Poids.Count();
 
 
         }
 
-        public float forward(int []weight)
+        public double forward(double []weight)
         {
-            float result = 0;
+            double result = 0;
 
             for (int i = 0; i < Weights.Length; i++)
             {

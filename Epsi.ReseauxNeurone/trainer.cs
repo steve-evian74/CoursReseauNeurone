@@ -8,11 +8,11 @@ namespace Epsi.ReseauxNeurone
 {
     class Trainer
     {
-        int[] tabTrainer;
+        double[] tabTrainer;
         int x = 0, y = 0;
         int excepted;
         int numbertimes = 0;
-        public Trainer(int[] tab, int value)
+        public Trainer(double[] tab, int value)
         {
             excepted = value;
             tabTrainer = tab;
@@ -33,8 +33,8 @@ namespace Epsi.ReseauxNeurone
 
         public void somme(int x, int y)
         {
-            int result = tabTrainer[x] + tabTrainer[y];
-            verification(result, excepted);
+            double result = tabTrainer[x] + tabTrainer[y];
+            verification(Convert.ToInt32(result), excepted);
         }
 
         public void verification(int result, int excepted)
