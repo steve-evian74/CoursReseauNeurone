@@ -10,6 +10,9 @@ namespace Epsi.ReseauxNeurone
     {
         private double[] Weights;
 
+        public Neurone()
+        { }
+
         public Neurone( int numberRandom)
         {
             var rand = new Random();
@@ -22,10 +25,15 @@ namespace Epsi.ReseauxNeurone
 
         }
 
-        public int Activation(double[] Poids)
+        public double Activation(double x)
         {
-            return Poids.Count();
+            return x;
 
+
+        }
+
+        public void backprogate()
+        {
 
         }
 
@@ -37,7 +45,7 @@ namespace Epsi.ReseauxNeurone
             {
                 result = (Weights[i] * weight[i]) + result;
             }
-            Activation(Weights);
+            Activation(result);
             return result;
             
         }

@@ -34,22 +34,30 @@ namespace Epsi.ReseauxNeurone
         public void somme(int x, int y)
         {
             double result = tabTrainer[x] + tabTrainer[y];
-            verification(Convert.ToInt32(result), excepted);
+            verification(result, excepted);
         }
 
-        public void verification(int result, int excepted)
+        public void verification(double result, int excepted)
         {
+            /*
             double resultDouble = result, exceptedDouble = excepted;
             resultDouble  = Math.Pow(resultDouble,2);
-            exceptedDouble = Math.Pow(exceptedDouble, 2);
-            if (resultDouble == exceptedDouble)
+            exceptedDouble = Math.Pow(exceptedDouble, 2);*/
+
+            double test = 2*(result - Convert.ToDouble(excepted));
+
+            Neurone neuro = new Neurone();
+            Console.WriteLine(neuro.Activation(test));
+
+            if (test == 0)
             {
+                
                 Console.WriteLine("Le neurone a trouvé !");
                 Console.WriteLine("Le neurone a réalisé le nombre d'essai : " + nombreoperation()) ;
             }
             else
             {
-                Console.WriteLine("Le neurone n'a pas encore trouvé !, il doit encore réalisé les opérations ! ");
+                Console.WriteLine("{0} - {1} " , numbertimes , test);
                 numbertimes++;
                 choicesNumber();
             }
